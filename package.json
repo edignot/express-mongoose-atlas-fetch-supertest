@@ -1,0 +1,23 @@
+{
+  "name": "express-mongoose-atlas-fetch-supertest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edignot/express-mongoose-atlas-fetch-supertest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edignot/express-mongoose-atlas-fetch-supertest/issues"
+  },
+  "homepage": "https://github.com/edignot/express-mongoose-atlas-fetch-supertest#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
