@@ -75,6 +75,17 @@ describe('Task', () => {
 
   test('Should update a task in a database by id', async (done) => {
     const tasks = await Task.find()
+
+    const res = await request.patch(`/api/tasks/${tasks[0]._id}`).send({
+      title: 'updated title',
+      task: 'updated task',
+    })
+    expect(res.status).toBe(200)
+
+    const updatedTask = await Task.findById(tasks[0]._id)
+    expect(updatedTask.title).toBe('updated title')
+    expect(updatedTask.task).toBe('updated task')
+
     done()
   })
 
@@ -89,14 +100,15 @@ describe('Task', () => {
 
     const taskNotFound = await Task.findById(tasksBeforeDelete[0]._id)
     expect(taskNotFound).not.toBeTruthy()
-    
+
     done()
   })
 
-  test('Gets the test endpoint', async (done) => {
+  test('Should get error message if endpoint is not found', async (done) => {
     const res = await request.get('/')
     expect(res.status).toBe(404)
     expect(res.body.error).toBe('Not found')
+
     done()
   })
 })
