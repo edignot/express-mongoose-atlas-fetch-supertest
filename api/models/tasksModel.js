@@ -15,6 +15,9 @@ const tasksSchema = new mongoose.Schema(
       trim: true,
       minlength: 5,
     },
+    image: {
+      type: String,
+    },
   },
   { timestamps: true },
 )
