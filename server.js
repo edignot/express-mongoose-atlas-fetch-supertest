@@ -8,10 +8,10 @@ mongoose.connect(uri, { useNewUrlParser: true, useCreateIndex: true })
 
 const connection = mongoose.connection
 connection.once('open', () => {
-  console.log('MongoDB connection established successfully')
+  console.log('Database connected')
 })
 
-const port = process.env.PORT || 2000
+const port = process.env.PORT || 3000
 
 app.listen(port, () =>
   console.log(`Server is running on port http://localhosts:${port}`),
