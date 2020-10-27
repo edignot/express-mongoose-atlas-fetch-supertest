@@ -4,10 +4,20 @@ const request = supertest(app)
 const mongoose = require('mongoose')
 const Task = require('../models/tasksModel')
 
+const tasks = [
+  { title: 'title 1', task: 'task 1' },
+  { title: 'title 2', task: 'task 2' },
+  { title: 'title 3', task: 'task 3' },
+]
+
 describe('Task', () => {
   beforeAll(async () => {
     const url = `mongodb://127.0.0.1/tasks`
     await mongoose.connect(url, { useNewUrlParser: true })
+    for (const task of tasks) {
+      const newTask = new Task(task)
+      await newTask.save()
+    }
   })
 
   afterEach(async () => {
