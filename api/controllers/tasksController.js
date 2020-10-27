@@ -1,12 +1,16 @@
 const Task = require('../models/tasksModel')
 const fetch = require('node-fetch')
 
-exports.get_all_tasks = (req, res) => {
-  Task.find()
+exports.get_all_tasks = async (req, res, next) => {
+  // try {
+  await Task.find()
     .then((tasks) =>
       tasks.length ? res.json(tasks) : res.json({ message: 'No tasks found' }),
     )
     .catch((error) => res.status(400).json({ error }))
+  // } catch (error) {
+  //   next(error)
+  // }
 }
 
 exports.post_new_task = async (req, res) => {
