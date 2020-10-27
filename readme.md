@@ -4,9 +4,7 @@
 
 :floppy_disk: This is a first microservice I have built and unit tested.
 
--
 ### Learning goals:
-
 - Implement an HTTP API web server microservice.
 - Interact with downstream APIs.
 - Connect server to NoSQL database.
