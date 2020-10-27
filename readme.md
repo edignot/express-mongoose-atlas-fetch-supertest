@@ -22,6 +22,7 @@
 ### REST API Endpoints:
 
 Local Server
+
 `'http://localhost:3000/api/tasks'`
 
 - `GET`
@@ -34,5 +35,6 @@ Local Server
 - `DELETE`
 
 Production
+
 `endpoints data will be updated when deployed`
 
