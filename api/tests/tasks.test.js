@@ -38,31 +38,58 @@ describe('Task', () => {
       task: 'test task',
     })
     expect(res.status).toBe(200)
+
     const task = await Task.findOne({ title: 'test title' })
     expect(task.title).toBe('test title')
     expect(task.task).toBe('test task')
     expect(task.image).toBeTruthy()
     expect(task._id).toBeTruthy()
+
     done()
   })
 
   test('Should get all tasks from a database', async (done) => {
     const res = await request.get('/api/tasks')
     expect(res.status).toBe(200)
+
     const parsedRes = JSON.parse(res.text)
     expect(parsedRes.length).toBe(tasks.length)
     expect(parsedRes[0].title).toBe(tasks[0].title)
     expect(parsedRes[0].task).toBe(tasks[0].task)
+
     done()
   })
 
   test('Should get a task from a database by id', async (done) => {
     const task = await Task.findOne({ title: tasks[0].title })
+
     const res = await request.get(`/api/tasks/${task._id}`)
     expect(res.status).toBe(200)
+
     const parsedRes = JSON.parse(res.text)
     expect(parsedRes.title).toBe(tasks[0].title)
     expect(parsedRes.task).toBe(tasks[0].task)
+
+    done()
+  })
+
+  test('Should update a task in a database by id', async (done) => {
+    const tasks = await Task.find()
+    done()
+  })
+
+  test('Should delete a task from a database by id', async (done) => {
+    const tasksBeforeDelete = await Task.find()
+
+    const res = await request.delete(`/api/tasks/${tasksBeforeDelete[0]._id}`)
+    expect(res.status).toBe(200)
+
+    const tasksAfterDelete = await Task.find()
+    expect(tasksBeforeDelete.length).toBe(tasksAfterDelete.length + 1)
+
+    const taskNotFound = await Task.findById(tasksBeforeDelete[0]._id)
+    expect(taskNotFound).not.toBeTruthy()
+    
     done()
   })
 
