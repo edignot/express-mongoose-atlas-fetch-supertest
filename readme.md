@@ -2,7 +2,7 @@
 
 ### About
 
-This is a first microservice I have built and unit tested.
+:floppy_disk: This is a first microservice I have built and unit tested.
 
 ### Learning goals:
 
