@@ -7,9 +7,9 @@
 ### Learning goals:
 
 - Implement an HTTP API web server microservice.
-- Interacting with downstream APIs.
-- Connecting server to NoSQL database.
-- Testing API.
+- Interact with downstream APIs.
+- Connect server to NoSQL database.
+- Test API.
 
 ### Technologies Used:
 
