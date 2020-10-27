@@ -1,4 +1,3 @@
-const { json } = require('express')
 const Task = require('../models/tasksModel')
 
 exports.get_all_tasks = (req, res) => {
