@@ -4,24 +4,27 @@
 
 :floppy_disk: This is a first microservice I have built and unit tested.
 
-### Learning goals:
+## Learning goals:
 - Implement an HTTP API web server microservice.
 - Interact with downstream APIs.
 - Connect server to NoSQL database.
 - Test API.
 
-### Technologies Used:
-
+## Technologies Used:
 - Node | Express
 - MongoDB | Mongoose | MongoDB Atlas | MongoDB Compass
 - Jest | Supertest
 - Node Fetch
 
-### File structure
+## File structure
+- [Server](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/server.js)
+- [App](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/app.js)
+- [Routes](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/api/routes/tasksRouter.js)
+- [Model](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/api/models/tasksModel.js)
+- [Controller](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/api/controllers/tasksController.js)
+- [Endpoints Tests] 
 
-
-### REST API Endpoints:
-
+## REST API Endpoints:
 Local Server
 
 `'http://localhost:3000/api/tasks'`
@@ -39,7 +42,7 @@ Production
 
 `endpoints data will be updated when deployed`
 
-### Sample GET response `http://localhost:3000/api/tasks`
+## Sample GET response `http://localhost:3000/api/tasks`
 ```
 [
     {
@@ -61,9 +64,9 @@ Production
         "__v": 0
     }
 ]
-``` 
-### Testing
+```
 
+## Testing
 Utilized hooks to connect to local MongoDB before all tests run and disconnect after all tests finish running. Also seed testing database with testing data before each test and delete data after each test. All endpoints are tested.
 
 ```
