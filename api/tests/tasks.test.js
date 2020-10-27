@@ -56,6 +56,16 @@ describe('Task', () => {
     done()
   })
 
+  test('Should get a task from a database by id', async (done) => {
+    const task = await Task.findOne({ title: tasks[0].title })
+    const res = await request.get(`/api/tasks/${task._id}`)
+    expect(res.status).toBe(200)
+    const parsedRes = JSON.parse(res.text)
+    expect(parsedRes.title).toBe(tasks[0].title)
+    expect(parsedRes.task).toBe(tasks[0].task)
+    done()
+  })
+
   test('Gets the test endpoint', async (done) => {
     const res = await request.get('/')
     expect(res.status).toBe(404)
