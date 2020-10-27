@@ -22,7 +22,7 @@
 - [Routes](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/api/routes/tasksRouter.js)
 - [Model](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/api/models/tasksModel.js)
 - [Controller](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/api/controllers/tasksController.js)
-- [Endpoints Tests] 
+- [Endpoints Tests](https://github.com/edignot/express-mongoose-atlas-fetch-supertest/blob/master/api/tests/tasks.test.js)
 
 ## REST API Endpoints:
 Local Server
